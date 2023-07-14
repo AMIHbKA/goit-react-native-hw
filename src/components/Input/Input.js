@@ -50,23 +50,23 @@ export const Input = (props) => {
 
 const styles = StyleSheet.create({
   input: {
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingVertical: pixels.height[16],
+    paddingVertical: 0,
     paddingHorizontal: pixels.width[16],
     height: pixels.height[50],
     width: "100%",
-    color: "#000",
-    borderColor: "#E8E8E8",
-    backgroundColor: "#F6F6F6",
     fontSize: pixels.height[16],
     fontStyle: "normal",
     fontWeight: "400",
-    lineHeight: 1.2,
+    textAlignVertical: "center",
+    color: "#000",
+    backgroundColor: "#F6F6F6",
+    borderColor: "#E8E8E8",
+    borderWidth: 1,
+    borderRadius: 5,
   },
   focused: {
-    borderColor: "#FF6C00",
     backgroundColor: "#fff",
+    borderColor: "#FF6C00",
   },
   buttonShowPassword: {
     position: "absolute",

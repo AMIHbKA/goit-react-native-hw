@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import {
   KeyboardAvoidingView,
@@ -21,6 +22,8 @@ import {
 } from "../../utilities/validation";
 
 export const RegistrationScreen = () => {
+  const navigation = useNavigation();
+
   const initialValuesForm = { login: "", email: "", password: "" };
   const [formValues, setFormValues] = useState(initialValuesForm);
   const [errors, setErrors] = useState({
@@ -55,9 +58,8 @@ export const RegistrationScreen = () => {
     };
 
     if (!newErrors.login && !newErrors.email && !newErrors.password) {
-      console.log("Registration successful!");
-      console.log(newFormValues);
       setFormValues(initialValuesForm);
+      navigation.navigate("Home", { newFormValues });
     } else {
       setFormValues(newFormValues);
     }
@@ -118,10 +120,12 @@ export const RegistrationScreen = () => {
                 onPress={handleSubmit}
               />
               <ButtonLink
-                text="Вже є акаунт? Увійти"
+                text="Вже є акаунт? "
+                link="Увійти"
+                onPress={() => navigation.navigate("Login")}
                 style={{
-                  marginVertical: pixels.height[16],
-                  textAlign: "center",
+                  marginTop: pixels.height[16],
+                  justifyContent: "center",
                   fontSize: pixels.height[16],
                 }}
               />

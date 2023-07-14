@@ -63,3 +63,104 @@ export const AddPhotoIcon = ({ width = 37, height = 37 }) => {
     </Svg>
   );
 };
+
+export const ExitIcon = ({ width = 24, height = 24 }) => {
+  return (
+    <Svg
+      xmlns="http://www.w3.org/2000/Svg"
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <Path
+        d="M10 22H5C3.89543 22 3 21.1046 3 20V4C3 2.89543 3.89543 2 5 2H10"
+        stroke="#BDBDBD"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M17 16L21 12L17 8"
+        stroke="#BDBDBD"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M21 12H9"
+        stroke="#BDBDBD"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
+
+export const UserIcon = ({ width = 40, height = 40 }) => {
+  return (
+    <Svg
+      width={width}
+      height={height}
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <Path
+        d="M28 29v-2a4 4 0 0 0-4-4h-8a4 4 0 0 0-4 4v2"
+        stroke="#212121"
+        stroke-opacity=".8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        clip-rule="evenodd"
+        d="M20 19a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
+        stroke="#212121"
+        stroke-opacity=".8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
+
+export const GridIcon = ({ width = 40, height = 40 }) => {
+  return (
+    <Svg
+      width={width}
+      height={height}
+      fill="none"
+      viewBox="0 0 40 40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <Path fill="#fff" d="M8 8h24v24H8z" />
+      <Path
+        clip-rule="evenodd"
+        d="M11 11h7v7h-7v-7ZM22 11h7v7h-7v-7ZM22 22h7v7h-7v-7ZM11 22h7v7h-7v-7Z"
+        stroke="#212121"
+        stroke-opacity=".8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
+
+export const AddIcon = ({ width = 40, height = 40 }) => {
+  return (
+    <Svg
+      width={width}
+      height={height}
+      fill="none"
+      viewBox="0 0 40 40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <Path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M20.5 13.5h-1v6h-6v1h6v6h1v-6h6v-1h-6v-6Z"
+        fill="#212121"
+        fill-opacity=".8"
+      />
+    </Svg>
+  );
+};

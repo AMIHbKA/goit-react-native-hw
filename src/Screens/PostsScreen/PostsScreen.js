@@ -1,22 +1,21 @@
 import { StyleSheet, Text, View } from "react-native";
+import { BottomNavigation } from "../../components/BottomNavigation/BottomNavigation";
+import { ExitButton } from "../../components/ExitButton/ExitButton";
+import { ExitIcon } from "../../components/UI/icons";
 
 export const PostsScreen = () => {
-  return (
-    <View style={styles.background}>
-      <Text style={styles.text}>Posts Screen</Text>
-    </View>
-  );
+  return <BottomNavigation />;
 };
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: "brown",
-    flex: 3,
+    backgroundColor: "#fff",
+    flex: 2,
     justifyContent: "center",
   },
   text: {
     fontSize: 16,
-    color: "#fff",
+    color: "#000",
     textAlign: "center",
     justifyContent: "flex-end",
   },

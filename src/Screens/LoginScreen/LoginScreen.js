@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import {
   Keyboard,
@@ -17,6 +18,8 @@ import { pixels } from "../../utilities/adptivePixels";
 import { validateEmail, validatePassword } from "../../utilities/validation";
 
 export const LoginScreen = () => {
+  const navigation = useNavigation();
+
   const initialValuesForm = { email: "", password: "" };
   const [formValues, setFormValues] = useState(initialValuesForm);
   const [errors, setErrors] = useState({
@@ -47,9 +50,8 @@ export const LoginScreen = () => {
     };
 
     if (!newErrors.email && !newErrors.password) {
-      console.log("Login successful!");
-      console.log(newFormValues);
       setFormValues(initialValuesForm);
+      navigation.navigate("Home", { newFormValues });
     } else {
       setFormValues(newFormValues);
     }
@@ -95,10 +97,12 @@ export const LoginScreen = () => {
                 onPress={handleSubmit}
               />
               <ButtonLink
-                text="Немає акаунту? Зареєструватися"
+                text="Немає акаунту? "
+                link="Зареєструватися"
+                onPress={() => navigation.navigate("Registration")}
                 style={{
                   marginTop: pixels.height[16],
-                  textAlign: "center",
+                  justifyContent: "center",
                 }}
               />
             </ScrollContainer>
@@ -110,7 +114,7 @@ export const LoginScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { borderWidth: 1 },
+  container: {},
   text: {
     marginVertical: pixels.height[32],
     fontSize: pixels.height[30],
