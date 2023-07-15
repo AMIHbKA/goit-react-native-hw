@@ -10,6 +10,7 @@ import { PostsScreen } from "./src/Screens/PostsScreen/PostsScreen";
 import { RegistrationScreen } from "./src/Screens/RegistrationScreen/RegistrationScreen";
 import { headerStyle } from "./src/components/UI/headerStyle";
 import { ExitButton } from "./src/components/ExitButton/ExitButton";
+import { Home } from "./src/Screens/Home/Home";
 
 const MainStack = createStackNavigator();
 
@@ -33,7 +34,7 @@ export default function App() {
         />
         <MainStack.Screen
           name="Home"
-          component={PostsScreen}
+          component={Home}
           options={{
             title: "Публікації",
             headerLeft: () => null,

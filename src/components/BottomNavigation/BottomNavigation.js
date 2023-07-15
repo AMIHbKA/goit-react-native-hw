@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View } from "react-native";
 import { CreatePostsScreen } from "../../Screens/CreatePostsScreen/CreatePostsScreen";
 import { LoginScreen } from "../../Screens/LoginScreen/LoginScreen";
+import { PostsScreen } from "../../Screens/PostsScreen/PostsScreen";
 import { AddIcon, GridIcon, UserIcon } from "../UI/icons";
 
 const Tabs = createBottomTabNavigator();
@@ -12,13 +13,16 @@ export const BottomNavigation = () => {
       screenOptions={{
         tabBarShowLabel: false,
         headerShown: false,
+        tabBarIcon: ({ focused }) => (
+          <GridIcon fill={focused ? "blue" : "red"} />
+        ),
       }}
     >
       <Tabs.Screen
         name="Settings"
-        component={CreatePostsScreen}
+        component={PostsScreen}
         options={{
-          tabBarIcon: () => <GridIcon />,
+          tabBarIcon: ({ focused }) => <GridIcon />,
         }}
       />
       <Tabs.Screen

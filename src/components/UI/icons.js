@@ -123,7 +123,12 @@ export const UserIcon = ({ width = 40, height = 40 }) => {
   );
 };
 
-export const GridIcon = ({ width = 40, height = 40 }) => {
+export const GridIcon = ({
+  width = 40,
+  height = 40,
+  fill = "#fff",
+  stroke = "#212121",
+}) => {
   return (
     <Svg
       width={width}
@@ -132,11 +137,11 @@ export const GridIcon = ({ width = 40, height = 40 }) => {
       viewBox="0 0 40 40"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <Path fill="#fff" d="M8 8h24v24H8z" />
+      <Path fill={fill} d="M8 8h24v24H8z" />
       <Path
         clip-rule="evenodd"
         d="M11 11h7v7h-7v-7ZM22 11h7v7h-7v-7ZM22 22h7v7h-7v-7ZM11 22h7v7h-7v-7Z"
-        stroke="#212121"
+        stroke={stroke}
         stroke-opacity=".8"
         stroke-linecap="round"
         stroke-linejoin="round"

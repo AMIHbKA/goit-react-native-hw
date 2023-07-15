@@ -4,7 +4,7 @@ import { ExitButton } from "../../components/ExitButton/ExitButton";
 import { ExitIcon } from "../../components/UI/icons";
 
 export const PostsScreen = () => {
-  return <BottomNavigation />;
+  return <Text>Postscreen</Text>;
 };
 
 const styles = StyleSheet.create({

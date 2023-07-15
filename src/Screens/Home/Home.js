@@ -1,3 +1,5 @@
+import { BottomNavigation } from "../../components/BottomNavigation/BottomNavigation";
+
 export const Home = () => {
-  return <div>Home</div>;
+  return <BottomNavigation />;
 };
