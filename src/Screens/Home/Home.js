@@ -7,7 +7,6 @@ import { AddIcon, GridIcon, UserIcon } from "../../components/UI/icons";
 import { PostsScreen } from "../../Screens/PostsScreen/PostsScreen";
 import { pixels } from "../../utilities/adptivePixels";
 import { CreatePostsScreen } from "../CreatePostsScreen/CreatePostsScreen";
-import { HeaderBackButton } from "@react-navigation/elements";
 import { BackButton } from "../../components/BackButton/BackButton";
 
 const Tabs = createBottomTabNavigator();
@@ -55,7 +54,6 @@ export const Home = () => {
           );
         },
         tabBarStyle: {
-          borderWidth: 1,
           height: pixels.height[60],
           paddingHorizontal: pixels.width[85],
         },
@@ -70,26 +68,26 @@ export const Home = () => {
           headerRight: () => (
             <ExitButton onPress={() => navigation.navigate("Login")} />
           ),
-          headerLeft: (props) => <BackButton />,
           ...headerStyle,
         }}
       />
+
       <Tabs.Screen
         name="Create"
         component={CreatePostsScreen}
         options={{
-          title: "Публікації",
+          title: "Створити публікацію",
 
-          headerRight: () => <ExitButton />,
+          headerLeft: (props) => <BackButton />,
           ...headerStyle,
         }}
       />
+
       <Tabs.Screen
         name="Profile"
         component={CreatePostsScreen}
         options={{
           title: "Публікації",
-
           headerLeft: () => (
             <ExitButton onPress={() => navigation.navigate("Login")} />
           ),
