@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
 import { ExitButton } from "../../components/ExitButton/ExitButton";
 import { headerStyle } from "../../components/UI/headerStyle";
@@ -6,6 +7,8 @@ import { AddIcon, GridIcon, UserIcon } from "../../components/UI/icons";
 import { PostsScreen } from "../../Screens/PostsScreen/PostsScreen";
 import { pixels } from "../../utilities/adptivePixels";
 import { CreatePostsScreen } from "../CreatePostsScreen/CreatePostsScreen";
+import { HeaderBackButton } from "@react-navigation/elements";
+import { BackButton } from "../../components/BackButton/BackButton";
 
 const Tabs = createBottomTabNavigator();
 
@@ -18,6 +21,8 @@ const iconStyles = {
 };
 
 export const Home = () => {
+  const navigation = useNavigation();
+
   return (
     <Tabs.Navigator
       initialRouteName="Posts"
@@ -59,38 +64,37 @@ export const Home = () => {
       <Tabs.Screen
         name="Posts"
         component={PostsScreen}
-        options={({ navigation }) => ({
+        options={{
           title: "Публікації",
 
           headerRight: () => (
             <ExitButton onPress={() => navigation.navigate("Login")} />
           ),
+          headerLeft: (props) => <BackButton />,
           ...headerStyle,
-        })}
+        }}
       />
       <Tabs.Screen
         name="Create"
         component={CreatePostsScreen}
-        options={({ navigation }) => ({
+        options={{
           title: "Публікації",
 
-          headerRight: () => (
-            <ExitButton onPress={() => navigation.navigate("Login")} />
-          ),
+          headerRight: () => <ExitButton />,
           ...headerStyle,
-        })}
+        }}
       />
       <Tabs.Screen
         name="Profile"
         component={CreatePostsScreen}
-        options={({ navigation }) => ({
+        options={{
           title: "Публікації",
 
-          headerRight: () => (
+          headerLeft: () => (
             <ExitButton onPress={() => navigation.navigate("Login")} />
           ),
           ...headerStyle,
-        })}
+        }}
       />
     </Tabs.Navigator>
   );

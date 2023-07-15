@@ -1,3 +1,5 @@
+import { Text } from "react-native";
+
 export const ProfileScreen = () => {
-  return <div>ProfileScreen</div>;
+  return <Text>ProfileScreen</Text>;
 };

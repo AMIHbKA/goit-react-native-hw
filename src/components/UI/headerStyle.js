@@ -2,7 +2,6 @@ import { pixels } from "../../utilities/adptivePixels";
 
 export const headerStyle = {
   headerStyle: {
-    // height: pixels.height[60],
     backgroundColor: "#fff",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 0.5 },

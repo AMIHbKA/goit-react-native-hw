@@ -198,3 +198,30 @@ export const AddIcon = ({ width = 40, height = 40, fill = "#212121" }) => {
     </Svg>
   );
 };
+
+export const BackIcon = ({ width = 24, height = 24, stroke = "#212121" }) => {
+  return (
+    <Svg
+      width={width}
+      height={height}
+      fill="none"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <Path
+        d="M20 12H4"
+        stroke={stroke}
+        stroke-opacity="0.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M10 18L4 12L10 6"
+        stroke={stroke}
+        stroke-opacity="0.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
