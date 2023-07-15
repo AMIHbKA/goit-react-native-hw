@@ -14,7 +14,6 @@ export const headerStyle = {
   headerTitleStyle: {
     fontWeight: 500,
     fontSize: pixels.height[17],
-    // lineHeight: pixels.height[60],
   },
   headerTitleAlign: "center",
 };

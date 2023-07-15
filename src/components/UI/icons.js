@@ -1,5 +1,5 @@
 import React from "react";
-import { Svg, Path, G, Circle } from "react-native-svg";
+import { Svg, Path, G, Circle, Rect } from "react-native-svg";
 
 export const DelPhotoIcon = () => {
   return (
@@ -95,27 +95,28 @@ export const ExitIcon = ({ width = 24, height = 24 }) => {
   );
 };
 
-export const UserIcon = ({ width = 40, height = 40 }) => {
+export const UserIcon = ({ width = 24, height = 24, stroke = "#212121" }) => {
   return (
     <Svg
       width={width}
       height={height}
-      viewBox="0 0 40 40"
+      viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <Path
-        d="M28 29v-2a4 4 0 0 0-4-4h-8a4 4 0 0 0-4 4v2"
-        stroke="#212121"
-        stroke-opacity=".8"
+        d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21"
+        stroke={stroke}
+        stroke-opacity="0.8"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <Path
+        fill-rule="evenodd"
         clip-rule="evenodd"
-        d="M20 19a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
-        stroke="#212121"
-        stroke-opacity=".8"
+        d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+        stroke={stroke}
+        stroke-opacity="0.8"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
@@ -124,8 +125,8 @@ export const UserIcon = ({ width = 40, height = 40 }) => {
 };
 
 export const GridIcon = ({
-  width = 40,
-  height = 40,
+  width = 24,
+  height = 24,
   fill = "#fff",
   stroke = "#212121",
 }) => {
@@ -134,15 +135,43 @@ export const GridIcon = ({
       width={width}
       height={height}
       fill="none"
-      viewBox="0 0 40 40"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <Path fill={fill} d="M8 8h24v24H8z" />
+      <Rect width="24" height="24" fill={fill} />
       <Path
+        fill-rule="evenodd"
         clip-rule="evenodd"
-        d="M11 11h7v7h-7v-7ZM22 11h7v7h-7v-7ZM22 22h7v7h-7v-7ZM11 22h7v7h-7v-7Z"
+        d="M3 3H10V10H3V3Z"
         stroke={stroke}
-        stroke-opacity=".8"
+        stroke-opacity="0.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M14 3H21V10H14V3Z"
+        stroke={stroke}
+        stroke-opacity="0.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M14 14H21V21H14V14Z"
+        stroke={stroke}
+        stroke-opacity="0.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M3 14H10V21H3V14Z"
+        stroke={stroke}
+        stroke-opacity="0.8"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
@@ -150,7 +179,7 @@ export const GridIcon = ({
   );
 };
 
-export const AddIcon = ({ width = 40, height = 40 }) => {
+export const AddIcon = ({ width = 40, height = 40, fill = "#212121" }) => {
   return (
     <Svg
       width={width}
@@ -163,7 +192,7 @@ export const AddIcon = ({ width = 40, height = 40 }) => {
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M20.5 13.5h-1v6h-6v1h6v6h1v-6h6v-1h-6v-6Z"
-        fill="#212121"
+        fill={fill}
         fill-opacity=".8"
       />
     </Svg>

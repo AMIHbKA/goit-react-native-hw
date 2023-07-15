@@ -36,10 +36,7 @@ export default function App() {
           name="Home"
           component={Home}
           options={{
-            title: "Публікації",
-            headerLeft: () => null,
-            headerRight: () => <ExitButton />,
-            ...headerStyle,
+            headerShown: false,
           }}
         />
       </MainStack.Navigator>

@@ -1,16 +1,18 @@
-import { StyleSheet, Text, View } from "react-native";
-import { BottomNavigation } from "../../components/BottomNavigation/BottomNavigation";
-import { ExitButton } from "../../components/ExitButton/ExitButton";
-import { ExitIcon } from "../../components/UI/icons";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, SafeAreaView } from "react-native";
 
 export const PostsScreen = () => {
-  return <Text>Postscreen</Text>;
+  return (
+    <SafeAreaView style={styles.background}>
+      <Text style={styles.text}>Postscreen</Text>
+    </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({
   background: {
     backgroundColor: "#fff",
-    flex: 2,
+    flex: 1,
     justifyContent: "center",
   },
   text: {
