@@ -6,10 +6,7 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import { LoginScreen } from "./src/Screens/LoginScreen/LoginScreen";
-import { PostsScreen } from "./src/Screens/PostsScreen/PostsScreen";
 import { RegistrationScreen } from "./src/Screens/RegistrationScreen/RegistrationScreen";
-import { headerStyle } from "./src/components/UI/headerStyle";
-import { ExitButton } from "./src/components/ExitButton/ExitButton";
 import { Home } from "./src/Screens/Home/Home";
 
 const MainStack = createStackNavigator();
