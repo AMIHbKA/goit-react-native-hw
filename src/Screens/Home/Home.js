@@ -2,12 +2,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
 import { ExitButton } from "../../components/ExitButton/ExitButton";
-import { headerStyle } from "../../components/UI/headerStyle";
+import { headerStyle } from "../../components/UI/commonStyles";
 import { AddIcon, GridIcon, UserIcon } from "../../components/UI/icons";
 import { PostsScreen } from "../../Screens/PostsScreen/PostsScreen";
 import { pixels } from "../../utilities/adptivePixels";
 import { CreatePostsScreen } from "../CreatePostsScreen/CreatePostsScreen";
 import { BackButton } from "../../components/BackButton/BackButton";
+import { ProfileScreen } from "../ProfileScreen/ProfileScreen";
 
 const Tabs = createBottomTabNavigator();
 
@@ -77,17 +78,18 @@ export const Home = () => {
         component={CreatePostsScreen}
         options={{
           title: "Створити публікацію",
-
+          tabBarStyle: { display: "none" },
           headerLeft: (props) => <BackButton />,
           ...headerStyle,
+          tabBarVisible: false,
         }}
       />
 
       <Tabs.Screen
         name="Profile"
-        component={CreatePostsScreen}
+        component={ProfileScreen}
         options={{
-          title: "Публікації",
+          headerShown: false,
           headerLeft: () => (
             <ExitButton onPress={() => navigation.navigate("Login")} />
           ),

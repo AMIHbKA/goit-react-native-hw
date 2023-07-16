@@ -16,3 +16,8 @@ export const headerStyle = {
   },
   headerTitleAlign: "center",
 };
+
+export const textStyleGrey = {
+  fontSize: pixels.height[16],
+  color: "#BDBDBD",
+};

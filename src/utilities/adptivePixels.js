@@ -39,6 +39,7 @@ export const pixels = {
     112: getPixelsWidth(112),
     110: getPixelsWidth(110),
     120: getPixelsWidth(120),
+    240: getPixelsWidth(240),
     375: getPixelsWidth(375),
   },
   height: {
@@ -64,5 +65,7 @@ export const pixels = {
     100: getPixelsHeight(100),
     110: getPixelsHeight(110),
     120: getPixelsHeight(120),
+    240: getPixelsHeight(240),
+    375: getPixelsWidth(375),
   },
 };

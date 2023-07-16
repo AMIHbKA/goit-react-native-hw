@@ -1,5 +1,5 @@
 import React from "react";
-import { Svg, Path, G, Circle, Rect } from "react-native-svg";
+import { Svg, Path, G, Circle, Rect, Defs, ClipPath } from "react-native-svg";
 
 export const DelPhotoIcon = () => {
   return (
@@ -219,6 +219,95 @@ export const BackIcon = ({ width = 24, height = 24, stroke = "#212121" }) => {
         d="M10 18L4 12L10 6"
         stroke={stroke}
         stroke-opacity="0.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
+
+export const CameraIcon = ({
+  size = 24,
+  fillPrimary = "#BDBDBD",
+  fillSecondary = "#fff",
+}) => {
+  return (
+    <Svg
+      width={size}
+      height={size}
+      fill="none"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <G clip-path="url(#a)" fill={fillPrimary}>
+        <Path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Z" />
+        <Path d="M9 2 7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9Zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5Z" />
+      </G>
+      <Defs>
+        <ClipPath id="a">
+          <Path fill={fillSecondary} d="M0 0h24v24H0z" />
+        </ClipPath>
+      </Defs>
+    </Svg>
+  );
+};
+
+export const TrashIcon = ({
+  width = 24,
+  height = 24,
+  fill = "#BDBDBD",
+  stroke = "#BDBDBD",
+}) => {
+  return (
+    <Svg
+      width={width}
+      height={height}
+      fill="none"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <Path
+        d="M3 6h18"
+        stroke={stroke}
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M19.5 6a.5.5 0 0 0-1 0h1Zm-14 0a.5.5 0 0 0-1 0h1Zm2 0a.5.5 0 0 0 1 0h-1Zm8 0a.5.5 0 0 0 1 0h-1Zm3 0v14h1V6h-1Zm0 14a1.5 1.5 0 0 1-1.5 1.5v1a2.5 2.5 0 0 0 2.5-2.5h-1ZM17 21.5H7v1h10v-1Zm-10 0A1.5 1.5 0 0 1 5.5 20h-1A2.5 2.5 0 0 0 7 22.5v-1ZM5.5 20V6h-1v14h1Zm3-14V4h-1v2h1Zm0-2A1.5 1.5 0 0 1 10 2.5v-1A2.5 2.5 0 0 0 7.5 4h1ZM10 2.5h4v-1h-4v1Zm4 0A1.5 1.5 0 0 1 15.5 4h1A2.5 2.5 0 0 0 14 1.5v1ZM15.5 4v2h1V4h-1Z"
+        fill={fill}
+      />
+      <Path
+        d="M10 11v6M14 11v6"
+        stroke={stroke}
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
+
+export const MapPinIcon = ({ size = 24, stroke = "#BDBDBD" }) => {
+  return (
+    <Svg
+      width={size}
+      height={size}
+      fill="none"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <Path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M20 10.3636C20 16.0909 12 21 12 21C12 21 4 16.0909 4 10.3636C4 6.29681 7.58172 3 12 3C16.4183 3 20 6.29681 20 10.3636V10.3636Z"
+        stroke={stroke}
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M12 14C13.6569 14 15 12.6569 15 11C15 9.34315 13.6569 8 12 8C10.3431 8 9 9.34315 9 11C9 12.6569 10.3431 14 12 14Z"
+        stroke={stroke}
         stroke-linecap="round"
         stroke-linejoin="round"
       />

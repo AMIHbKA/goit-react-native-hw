@@ -3,8 +3,17 @@ import { pixels } from "../../utilities/adptivePixels";
 
 export const ButtonMain = (props) => {
   return (
-    <TouchableOpacity {...props} style={[styles.button, props.style]}>
-      <Text style={styles.buttonText}>{props.text}</Text>
+    <TouchableOpacity
+      {...props}
+      style={[
+        styles.button,
+        props.style,
+        props.disabled && { backgroundColor: "#F6F6F6" },
+      ]}
+    >
+      <Text style={[styles.buttonText, props.disabled && { color: "#BDBDBD" }]}>
+        {props.text}
+      </Text>
     </TouchableOpacity>
   );
 };
@@ -21,4 +30,5 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: pixels.height[16],
   },
+  disabled: {},
 });

@@ -11,6 +11,8 @@ import { Home } from "./src/Screens/Home/Home";
 
 const MainStack = createStackNavigator();
 
+// Кнопка удаления при появлении клавиатуры расположена некорректно
+
 export default function App() {
   return (
     <NavigationContainer>
