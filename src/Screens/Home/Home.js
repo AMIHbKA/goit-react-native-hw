@@ -27,6 +27,7 @@ export const Home = () => {
     <Tabs.Navigator
       initialRouteName="Posts"
       screenOptions={({ route }) => ({
+        unmountOnBlur: true,
         tabBarShowLabel: false,
         tabBarIcon: ({ focused }) => {
           let icon;
@@ -66,9 +67,7 @@ export const Home = () => {
         options={{
           title: "Публікації",
 
-          headerRight: () => (
-            <ExitButton onPress={() => navigation.navigate("Login")} />
-          ),
+          headerRight: () => <ExitButton />,
           ...headerStyle,
         }}
       />

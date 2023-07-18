@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: {
-    marginTop: pixels.height[32],
+    marginTop: pixels.height[92],
     marginBottom: pixels.height[32],
     fontSize: pixels.height[30],
     textAlign: "center",
