@@ -7,7 +7,7 @@ import { MapPinIcon } from "../UI/icons";
 const getIcon = (iconName) => {
   switch (iconName) {
     case "MapPin":
-      return <MapPinIcon />;
+      return <MapPinIcon size={pixels.height[24]} />;
     default:
       return null;
   }
@@ -32,11 +32,11 @@ export const InputPosts = (props) => {
 
 const styles = StyleSheet.create({
   input: {
-    ...textStyleGrey,
     lineHeight: pixels.height[50],
     height: pixels.height[50],
     borderBottomWidth: 1,
     borderColor: "#E8E8E8",
+    ...textStyleGrey,
   },
   icon: {
     position: "absolute",
@@ -44,6 +44,6 @@ const styles = StyleSheet.create({
     left: 0,
   },
   iconText: {
-    paddingLeft: 28,
+    paddingLeft: pixels.height[28],
   },
 });
