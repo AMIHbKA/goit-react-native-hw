@@ -1,3 +1,5 @@
+import { Text } from "react-native";
+
 export const MapScreen = () => {
-  return <div>MapScreen</div>;
+  return <Text>MapScreen</Text>;
 };
