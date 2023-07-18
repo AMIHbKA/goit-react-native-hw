@@ -1,6 +1,4 @@
 import { StyleSheet, View } from "react-native";
-import { pixels } from "../../utilities/adptivePixels";
-import { ExitButton } from "../ExitButton/ExitButton";
 
 export const FormLayout = ({ children, height }) => {
   return (

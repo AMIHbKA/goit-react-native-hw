@@ -21,6 +21,6 @@ const styles = StyleSheet.create({
     borderColor: "#E8E8E8",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 32,
+    marginTop: pixels.height[32],
   },
 });

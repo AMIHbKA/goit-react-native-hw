@@ -10,7 +10,7 @@ export const BackButton = () => {
       style={{ marginLeft: pixels.width[16] }}
       onPress={() => navigation.goBack()}
     >
-      <BackIcon />
+      <BackIcon size={pixels.height[24]} />
     </Pressable>
   );
 };
