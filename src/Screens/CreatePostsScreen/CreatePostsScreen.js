@@ -13,15 +13,17 @@ import { FadeInView } from "../../components/FadeInView/FadeInView";
 import { InputPosts } from "../../components/InputPosts/InputPosts";
 import { ScrollContainer } from "../../components/ScrollContainer/ScrollContainer";
 import { textStyleGrey } from "../../components/UI/commonStyles";
+import { useKeyboardVisibility } from "../../hooks/useKeyboardVisibility";
 import { pixels } from "../../utilities/adptivePixels";
 
 export const CreatePostsScreen = () => {
+  const keyboardVisible = useKeyboardVisibility();
+
   return (
     <View
       style={{
         backgroundColor: "#fff",
         flex: 1,
-        paddingHorizontal: pixels.width[16],
       }}
     >
       <FadeInView>
@@ -51,7 +53,9 @@ export const CreatePostsScreen = () => {
           </KeyboardAvoidingView>
         </TouchableWithoutFeedback>
       </FadeInView>
-      <DeleteButton width={24} height={24} isActive={false} />
+      {!keyboardVisible && (
+        <DeleteButton width={24} height={24} isActive={false} />
+      )}
     </View>
   );
 };
