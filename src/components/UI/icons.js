@@ -1,11 +1,11 @@
 import React from "react";
 import { Svg, Path, G, Circle, Rect, Defs, ClipPath } from "react-native-svg";
 
-export const DelPhotoIcon = () => {
+export const DelPhotoIcon = ({ size = 37 }) => {
   return (
     <Svg
-      width="37"
-      height="37"
+      width={size}
+      height={size}
       viewBox="0 0 37 37"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -32,11 +32,11 @@ export const DelPhotoIcon = () => {
   );
 };
 
-export const AddPhotoIcon = ({ width = 37, height = 37 }) => {
+export const AddPhotoIcon = ({ size = 37 }) => {
   return (
     <Svg
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 37 37"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -64,30 +64,30 @@ export const AddPhotoIcon = ({ width = 37, height = 37 }) => {
   );
 };
 
-export const ExitIcon = ({ width = 24, height = 24 }) => {
+export const ExitIcon = ({ size = 24, stroke = "#BDBDBD" }) => {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/Svg"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
     >
       <Path
         d="M10 22H5C3.89543 22 3 21.1046 3 20V4C3 2.89543 3.89543 2 5 2H10"
-        stroke="#BDBDBD"
+        stroke={stroke}
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <Path
         d="M17 16L21 12L17 8"
-        stroke="#BDBDBD"
+        stroke={stroke}
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <Path
         d="M21 12H9"
-        stroke="#BDBDBD"
+        stroke={stroke}
         stroke-linecap="round"
         stroke-linejoin="round"
       />
@@ -95,11 +95,11 @@ export const ExitIcon = ({ width = 24, height = 24 }) => {
   );
 };
 
-export const UserIcon = ({ width = 24, height = 24, stroke = "#212121" }) => {
+export const UserIcon = ({ size = 24, stroke = "#212121" }) => {
   return (
     <Svg
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -125,15 +125,15 @@ export const UserIcon = ({ width = 24, height = 24, stroke = "#212121" }) => {
 };
 
 export const GridIcon = ({
-  width = 24,
-  height = 24,
+  size = 24,
+
   fill = "#fff",
   stroke = "#212121",
 }) => {
   return (
     <Svg
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       fill="none"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
@@ -179,11 +179,11 @@ export const GridIcon = ({
   );
 };
 
-export const AddIcon = ({ width = 40, height = 40, fill = "#212121" }) => {
+export const AddIcon = ({ size = 40, fill = "#212121" }) => {
   return (
     <Svg
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       fill="none"
       viewBox="0 0 40 40"
       xmlns="http://www.w3.org/2000/svg"
@@ -199,11 +199,11 @@ export const AddIcon = ({ width = 40, height = 40, fill = "#212121" }) => {
   );
 };
 
-export const BackIcon = ({ width = 24, height = 24, stroke = "#212121" }) => {
+export const BackIcon = ({ size = 24, stroke = "#212121" }) => {
   return (
     <Svg
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       fill="none"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
@@ -253,15 +253,14 @@ export const CameraIcon = ({
 };
 
 export const TrashIcon = ({
-  width = 24,
-  height = 24,
+  size = 24,
   fill = "#BDBDBD",
   stroke = "#BDBDBD",
 }) => {
   return (
     <Svg
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       fill="none"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"

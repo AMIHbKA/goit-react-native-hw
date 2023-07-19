@@ -9,6 +9,7 @@ import { AddPhotoIcon, DelPhotoIcon } from "../UI/icons";
 import * as ImagePicker from "expo-image-picker";
 import { useState } from "react";
 import { pixels } from "../../utilities/adptivePixels";
+import { ExitButton } from "../ExitButton/ExitButton";
 
 export const Avatar = () => {
   const [image, setImage] = useState(null);
@@ -36,9 +37,9 @@ export const Avatar = () => {
         onPress={image ? handleDelPress : handleAddPress}
       >
         {image ? (
-          <DelPhotoIcon />
+          <DelPhotoIcon size={pixels.height[37]} />
         ) : (
-          <AddPhotoIcon width={pixels.width[37]} height={pixels.width[37]} />
+          <AddPhotoIcon size={pixels.height[37]} />
         )}
       </Pressable>
     </View>
@@ -47,11 +48,15 @@ export const Avatar = () => {
 
 const styles = StyleSheet.create({
   container: {
+    left: "50%",
+    width: pixels.width[120],
+    // position: "absolute",
     alignItems: "center",
     paddingBottom: pixels.width[35],
   },
   photo: {
     position: "absolute",
+    left: "-50%",
     top: -pixels.width[60],
     height: pixels.width[120],
     width: pixels.width[120],
@@ -63,9 +68,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     top: pixels.width[15],
-    left: pixels.width[60],
+    left: 0,
+
     width: pixels.width[25],
     height: pixels.width[25],
-    borderRadius: 20,
+    // borderRadius: 20,
   },
 });

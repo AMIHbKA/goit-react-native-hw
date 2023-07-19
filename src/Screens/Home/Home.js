@@ -27,20 +27,35 @@ export const Home = () => {
     <Tabs.Navigator
       initialRouteName="Posts"
       screenOptions={({ route }) => ({
+        unmountOnBlur: true,
         tabBarShowLabel: false,
         tabBarIcon: ({ focused }) => {
           let icon;
           switch (route.name) {
             case "Posts":
               icon = (
-                <GridIcon stroke={focused ? "#fff" : "#4d4d4d"} fill="none" />
+                <GridIcon
+                  stroke={focused ? "#fff" : "#4d4d4d"}
+                  fill="none"
+                  size={pixels.height[24]}
+                />
               );
               break;
             case "Create":
-              icon = <AddIcon fill={focused ? "#fff" : "#4d4d4d"} />;
+              icon = (
+                <AddIcon
+                  fill={focused ? "#fff" : "#4d4d4d"}
+                  size={pixels.height[24]}
+                />
+              );
               break;
             case "Profile":
-              icon = <UserIcon stroke={focused ? "#fff" : "#4d4d4d"} />;
+              icon = (
+                <UserIcon
+                  stroke={focused ? "#fff" : "#4d4d4d"}
+                  size={pixels.height[24]}
+                />
+              );
               break;
           }
           return (
@@ -66,9 +81,7 @@ export const Home = () => {
         options={{
           title: "Публікації",
 
-          headerRight: () => (
-            <ExitButton onPress={() => navigation.navigate("Login")} />
-          ),
+          headerRight: () => <ExitButton size={pixels.height[24]} />,
           ...headerStyle,
         }}
       />

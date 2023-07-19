@@ -12,8 +12,7 @@ export const DeleteButton = ({ width, height, isActive }) => {
       >
         <TrashIcon
           style={styles.test}
-          width={width}
-          height={height}
+          size={pixels.height[24]}
           fill={isActive ? "#fff" : "#BDBDBD"}
           stroke={isActive ? "#fff" : "#BDBDBD"}
         />
