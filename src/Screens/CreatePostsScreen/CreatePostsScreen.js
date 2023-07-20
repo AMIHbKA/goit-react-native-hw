@@ -7,7 +7,7 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import { ButtonMain } from "../../components/ButtonMain/ButtonMain";
-import { ContentBlock } from "../../components/ContentBlock/ContentBlock";
+import { CameraBlock } from "../../components/CameraBlock/CameraBlock";
 import { DeleteButton } from "../../components/DeleteButton/DeleteButton";
 import { FadeInView } from "../../components/FadeInView/FadeInView";
 import { InputPosts } from "../../components/InputPosts/InputPosts";
@@ -33,7 +33,7 @@ export const CreatePostsScreen = () => {
             style={styles.container}
           >
             <ScrollContainer>
-              <ContentBlock />
+              <CameraBlock />
               <Text style={styles.text}>Завантажте фото</Text>
               <InputPosts
                 placeholder="Назва"
