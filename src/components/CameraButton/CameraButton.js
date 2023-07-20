@@ -2,9 +2,9 @@ import { Pressable, StyleSheet } from "react-native";
 import { pixels } from "../../utilities/adptivePixels";
 import { CameraIcon } from "../UI/icons";
 
-export const CameraButton = () => {
+export const CameraButton = (props) => {
   return (
-    <Pressable style={styles.container}>
+    <Pressable {...props} style={styles.container}>
       <CameraIcon size={pixels.height[24]} />
     </Pressable>
   );
