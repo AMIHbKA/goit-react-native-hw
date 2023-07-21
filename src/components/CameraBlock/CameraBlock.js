@@ -1,21 +1,28 @@
 import { Camera } from "expo-camera";
 import * as MediaLibrary from "expo-media-library";
-import { Animated, View, StyleSheet, Text, Image } from "react-native";
+import { View, StyleSheet, Text, Image, Button } from "react-native";
 import { pixels } from "../../utilities/adptivePixels";
 import { CameraButton } from "../CameraButton/CameraButton";
 import { useState, useEffect, useRef } from "react";
-import { Dimensions } from "react-native";
-
-const screenWidth = Dimensions.get("window").width;
-const screenHeight = Dimensions.get("window").height;
+import { ExpandLayout } from "../ExpandLayout/ExpandLayout";
 
 export const CameraBlock = () => {
   const [hasPermission, setHasPermission] = useState(null);
   const [cameraRef, setCameraRef] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [photoUri, setPhotoUri] = useState(null);
+  const [cameraEnabled, setCameraEnabled] = useState(true);
 
-  const aspectRatio = screenWidth / screenHeight;
+  const handlePhoto = async () => {
+    if (cameraRef) {
+      const { uri } = await cameraRef.takePictureAsync();
+      setPhotoUri(uri);
+      await MediaLibrary.createAssetAsync(uri);
+    }
+  };
+
+  const handleAnimationStart = () => setCameraEnabled(false);
+  const handleAnimationEnd = () => setCameraEnabled(true);
 
   useEffect(() => {
     (async () => {
@@ -34,39 +41,39 @@ export const CameraBlock = () => {
     return <Text>No access to camera</Text>;
   }
 
+  console.log("cameraEnabled", cameraEnabled);
   return (
-    <View style={styles.container} onPress={() => console.log("click")}>
-      {/* {photoUri && <Image sourse={photoUri} />} */}
-      <Image sourse={photoUri} />
-      <Camera
-        type={type}
-        ref={setCameraRef}
-        ratio="16:9"
-        orientation="lanscape"
-        style={styles.cameraBlock}
-        тзь
-      >
-        <CameraButton
-          onPress={async () => {
-            if (cameraRef) {
-              const { uri } = await cameraRef.takePictureAsync();
-              await MediaLibrary.createAssetAsync(uri);
-              setPhotoUri(uri);
-            }
-          }}
-        />
-      </Camera>
-    </View>
+    <ExpandLayout
+      onExpandStart={handleAnimationStart}
+      onExpandEnd={handleAnimationEnd}
+    >
+      {cameraEnabled ? (
+        <Camera
+          type={type}
+          ref={setCameraRef}
+          ratio="16:9"
+          orientation="lanscape"
+          style={styles.cameraBlock}
+        >
+          <CameraButton onPress={handlePhoto} />
+          {photoUri && (
+            <Image source={{ uri: photoUri }} style={styles.image} />
+          )}
+        </Camera>
+      ) : (
+        <View style={[styles.cameraBlock, { backgroundColor: "black" }]} />
+      )}
+    </ExpandLayout>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    // opacity: 0.5,
+    opacity: 0.5,
     width: "100%",
     flex: 1,
-    height: pixels.height[240],
-    // height: "auto",
+    // height: pixels.height[240],
+    height: "100%",
     borderWidth: 1,
     borderRadius: 8,
     // backgroundColor: "transparent",
@@ -78,9 +85,23 @@ const styles = StyleSheet.create({
   },
   cameraBlock: {
     width: "100%",
-    // height: "100%",
-    height: pixels.height[240],
+    height: "100%",
+    // height: pixels.height[240],
     justifyContent: "center",
     alignItems: "center",
+  },
+  image: {
+    position: "absolute",
+    width: "100%",
+    // objectFit: "fill",
+    // opacity: 0.5,
+    height: "100%",
+    // height: pixels.height[240],
+    borderWidth: 1,
+  },
+  expandButton: {
+    position: "absolute",
+    bottom: pixels.height[15],
+    right: "5%",
   },
 });

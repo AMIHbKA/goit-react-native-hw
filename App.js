@@ -8,10 +8,10 @@ import { StatusBar } from "expo-status-bar";
 import { LoginScreen } from "./src/Screens/LoginScreen/LoginScreen";
 import { RegistrationScreen } from "./src/Screens/RegistrationScreen/RegistrationScreen";
 import { Home } from "./src/Screens/Home/Home";
+import { ExpandLayout, Test } from "./src/Screens/Test/Test";
+import { View } from "react-native";
 
 const MainStack = createStackNavigator();
-
-// Кнопка удаления при появлении клавиатуры расположена некорректно
 
 export default function App() {
   return (
