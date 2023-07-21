@@ -1,6 +1,6 @@
 import { Camera } from "expo-camera";
 import * as MediaLibrary from "expo-media-library";
-import { Animated, View, StyleSheet } from "react-native";
+import { Animated, View, StyleSheet, Text, Image } from "react-native";
 import { pixels } from "../../utilities/adptivePixels";
 import { CameraButton } from "../CameraButton/CameraButton";
 import { useState, useEffect, useRef } from "react";
@@ -13,6 +13,7 @@ export const CameraBlock = () => {
   const [hasPermission, setHasPermission] = useState(null);
   const [cameraRef, setCameraRef] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
+  const [photoUri, setPhotoUri] = useState(null);
 
   const aspectRatio = screenWidth / screenHeight;
 
@@ -35,18 +36,22 @@ export const CameraBlock = () => {
 
   return (
     <View style={styles.container} onPress={() => console.log("click")}>
+      {/* {photoUri && <Image sourse={photoUri} />} */}
+      <Image sourse={photoUri} />
       <Camera
         type={type}
         ref={setCameraRef}
         ratio="16:9"
         orientation="lanscape"
         style={styles.cameraBlock}
+        тзь
       >
         <CameraButton
           onPress={async () => {
             if (cameraRef) {
               const { uri } = await cameraRef.takePictureAsync();
               await MediaLibrary.createAssetAsync(uri);
+              setPhotoUri(uri);
             }
           }}
         />
@@ -73,7 +78,8 @@ const styles = StyleSheet.create({
   },
   cameraBlock: {
     width: "100%",
-    height: "100%",
+    // height: "100%",
+    height: pixels.height[240],
     justifyContent: "center",
     alignItems: "center",
   },
