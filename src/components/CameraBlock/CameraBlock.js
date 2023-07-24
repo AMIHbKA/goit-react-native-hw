@@ -8,7 +8,7 @@ import { useState, useEffect, useRef } from "react";
 import { ExpandLayout } from "../ExpandLayout/ExpandLayout";
 import { ModeSwitch } from "../ModeSwitch/ModeSwitch";
 
-export const CameraBlock = () => {
+export const CameraBlock = ({ onPhotoChange }) => {
   const [hasPermission, setHasPermission] = useState(null);
   const [cameraRef, setCameraRef] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
@@ -22,6 +22,10 @@ export const CameraBlock = () => {
       setPhotoUri(uri);
       setCameraMode(!cameraMode);
       await MediaLibrary.createAssetAsync(uri);
+
+      if (onPhotoChange) {
+        onPhotoChange(uri);
+      }
     }
   };
 

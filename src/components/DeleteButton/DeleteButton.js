@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "flex-end",
+    marginTop: pixels.height[40],
     marginBottom: pixels.height[10],
   },
   button: {
