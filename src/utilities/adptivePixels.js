@@ -50,6 +50,7 @@ export const pixels = {
     120: getPixelsWidth(120),
     240: getPixelsWidth(240),
     375: getPixelsWidth(375),
+    500: getPixelsWidth(500),
   },
   height: {
     5: getPixelsHeight(5),
@@ -84,6 +85,7 @@ export const pixels = {
     110: getPixelsHeight(110),
     120: getPixelsHeight(120),
     240: getPixelsHeight(240),
-    375: getPixelsWidth(375),
+    375: getPixelsHeight(375),
+    500: getPixelsHeight(500),
   },
 };

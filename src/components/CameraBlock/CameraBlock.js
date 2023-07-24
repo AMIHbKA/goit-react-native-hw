@@ -1,10 +1,12 @@
 import { Camera } from "expo-camera";
 import * as MediaLibrary from "expo-media-library";
+import * as Location from "expo-location";
 import { View, StyleSheet, Text, Image, Button } from "react-native";
 import { pixels } from "../../utilities/adptivePixels";
 import { CameraButton } from "../CameraButton/CameraButton";
 import { useState, useEffect, useRef } from "react";
 import { ExpandLayout } from "../ExpandLayout/ExpandLayout";
+import { ModeSwitch } from "../ModeSwitch/ModeSwitch";
 
 export const CameraBlock = () => {
   const [hasPermission, setHasPermission] = useState(null);
@@ -12,11 +14,13 @@ export const CameraBlock = () => {
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [photoUri, setPhotoUri] = useState(null);
   const [cameraEnabled, setCameraEnabled] = useState(true);
+  const [cameraMode, setCameraMode] = useState(true);
 
   const handlePhoto = async () => {
     if (cameraRef) {
       const { uri } = await cameraRef.takePictureAsync();
       setPhotoUri(uri);
+      setCameraMode(!cameraMode);
       await MediaLibrary.createAssetAsync(uri);
     }
   };
@@ -41,13 +45,15 @@ export const CameraBlock = () => {
     return <Text>No access to camera</Text>;
   }
 
-  console.log("cameraEnabled", cameraEnabled);
   return (
     <ExpandLayout
+      height={pixels.height[240]}
+      expandHeight={pixels.height[500]}
+      style={styles.container}
       onExpandStart={handleAnimationStart}
       onExpandEnd={handleAnimationEnd}
     >
-      {cameraEnabled ? (
+      {cameraMode && cameraEnabled ? (
         <Camera
           type={type}
           ref={setCameraRef}
@@ -56,12 +62,18 @@ export const CameraBlock = () => {
           style={styles.cameraBlock}
         >
           <CameraButton onPress={handlePhoto} />
-          {photoUri && (
-            <Image source={{ uri: photoUri }} style={styles.image} />
-          )}
         </Camera>
       ) : (
         <View style={[styles.cameraBlock, { backgroundColor: "black" }]} />
+      )}
+      {photoUri && !cameraMode && (
+        <Image source={{ uri: photoUri }} style={styles.image} />
+      )}
+      {photoUri && (
+        <ModeSwitch
+          cameraMode={cameraMode}
+          onPress={() => setCameraMode(!cameraMode)}
+        />
       )}
     </ExpandLayout>
   );
@@ -69,14 +81,9 @@ export const CameraBlock = () => {
 
 const styles = StyleSheet.create({
   container: {
-    opacity: 0.5,
-    width: "100%",
     flex: 1,
-    // height: pixels.height[240],
-    height: "100%",
     borderWidth: 1,
     borderRadius: 8,
-    // backgroundColor: "transparent",
     borderColor: "#E8E8E8",
     justifyContent: "center",
     alignItems: "center",
@@ -86,18 +93,13 @@ const styles = StyleSheet.create({
   cameraBlock: {
     width: "100%",
     height: "100%",
-    // height: pixels.height[240],
     justifyContent: "center",
     alignItems: "center",
   },
   image: {
     position: "absolute",
     width: "100%",
-    // objectFit: "fill",
-    // opacity: 0.5,
     height: "100%",
-    // height: pixels.height[240],
-    borderWidth: 1,
   },
   expandButton: {
     position: "absolute",

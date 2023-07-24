@@ -9,6 +9,7 @@ export const ExpandLayout = ({
   buttonColor,
   onExpandStart,
   onExpandEnd,
+  style,
 }) => {
   const [expand, setExpand] = useState(false);
   const heightValue = useRef(new Animated.Value(height)).current;
@@ -23,7 +24,7 @@ export const ExpandLayout = ({
   };
 
   return (
-    <Animated.View style={[styles.box, { width: "100%", height: heightValue }]}>
+    <Animated.View style={[styles.box, { height: heightValue }, style]}>
       {children}
       <ExpandButton
         onPress={dimentionsHandler}
