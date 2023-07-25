@@ -28,7 +28,17 @@ export const CreatePostsScreen = () => {
     setPhotoUri(uri);
   };
 
-  console.log("placeName", placeName);
+  const handlePublic = () => {
+    const res = {
+      photo: photoUri,
+      photoName,
+      placeName,
+      location,
+    };
+    console.log(res);
+  };
+
+  const deleteActive = photoUri || placeName || photoName;
   return (
     <View
       style={{
@@ -63,14 +73,14 @@ export const CreatePostsScreen = () => {
               <ButtonMain
                 text={"Опублікувати"}
                 style={{ marginTop: pixels.height[32] }}
-                disabled
+                disabled={!photoUri}
               />
             </KeyboardAvoidingView>
           </TouchableWithoutFeedback>
         </ScrollContainer>
       </FadeInView>
       {!keyboardVisible && (
-        <DeleteButton width={24} height={24} isActive={false} />
+        <DeleteButton width={24} height={24} isActive={deleteActive} />
       )}
     </View>
   );
