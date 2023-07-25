@@ -7,6 +7,7 @@ import { CameraButton } from "../CameraButton/CameraButton";
 import { useState, useEffect, useRef } from "react";
 import { ExpandLayout } from "../ExpandLayout/ExpandLayout";
 import { ModeSwitch } from "../ModeSwitch/ModeSwitch";
+import store from "../../redux/store";
 
 export const CameraBlock = ({ onPhotoChange }) => {
   const [hasPermission, setHasPermission] = useState(null);
@@ -24,7 +25,12 @@ export const CameraBlock = ({ onPhotoChange }) => {
       await MediaLibrary.createAssetAsync(uri);
 
       if (onPhotoChange) {
-        onPhotoChange(uri);
+        let location = await Location.getCurrentPositionAsync({});
+        const coords = {
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude,
+        };
+        onPhotoChange(uri, coords);
       }
     }
   };
@@ -38,6 +44,14 @@ export const CameraBlock = ({ onPhotoChange }) => {
       await MediaLibrary.requestPermissionsAsync();
 
       setHasPermission(status === "granted");
+    })();
+
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        setErrorMsg("Permission to access location was denied");
+        return;
+      }
     })();
   }, []);
 

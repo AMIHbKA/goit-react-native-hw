@@ -1,0 +1,22 @@
+[
+    {
+        "id": "b7fe1831-0d69-450f-ab20-51813ef8fc6b",
+        "location": {
+            "latitude": 37.4220936,
+            "longitude": -122.083922
+        },
+        "photo": "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fgoit-react-native-hw-42b5531f-fb70-4097-b9e7-697c7330e86c/Camera/571ffb74-b7cb-46c1-9607-159b7213794c.jpg",
+        "photoName": null,
+        "placeName": null
+    },
+    {
+        "id": "9bc7823c-858b-4994-8a41-76d3e0f9d347",
+        "location": {
+            "latitude": 37.4220936,
+            "longitude": -122.083922
+        },
+        "photo": "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fgoit-react-native-hw-42b5531f-fb70-4097-b9e7-697c7330e86c/Camera/6725d015-8482-4175-9ef3-442c4148770e.jpg",
+        "photoName": null,
+        "placeName": null
+    }
+]

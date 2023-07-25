@@ -2,13 +2,13 @@ import { Pressable, StyleSheet, View } from "react-native";
 import { TrashIcon } from "../UI/icons";
 import { pixels } from "../../utilities/adptivePixels";
 
-export const DeleteButton = ({ width, height, isActive }) => {
+export const DeleteButton = ({ width, height, isActive, onPress }) => {
   return (
     <View style={styles.container}>
       <Pressable
         style={[styles.button, isActive && styles.active]}
         disabled={!isActive}
-        onPress={() => console.log("click")}
+        onPress={onPress}
       >
         <TrashIcon
           style={styles.test}
