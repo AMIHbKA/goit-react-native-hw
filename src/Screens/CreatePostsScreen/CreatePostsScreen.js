@@ -58,6 +58,7 @@ export const CreatePostsScreen = () => {
   };
 
   const deleteActive = photoUri || placeName || photoName;
+  const publisActive = photoUri && placeName && photoName;
   return (
     <View
       style={{
@@ -93,7 +94,7 @@ export const CreatePostsScreen = () => {
                 text={"Опублікувати"}
                 style={{ marginTop: pixels.height[32] }}
                 onPress={createPost}
-                disabled={!photoUri}
+                disabled={!publisActive}
               />
             </KeyboardAvoidingView>
           </TouchableWithoutFeedback>

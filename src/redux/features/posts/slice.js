@@ -20,8 +20,6 @@ export const postsSlice = createSlice({
 
 /* 
 TODO
-Сортировка списка постов. Самые свежие наверху
-timestamp
 Убрать Юзера при прокрутке
 **/
 
@@ -30,6 +28,10 @@ export const { selectAll: selectPosts, selectById: selectPostById } =
 
 export const selectPostsIds = createSelector(selectPosts, (posts) =>
   posts.map((post) => post.id)
+);
+
+export const selectSortedPosts = createSelector(selectPosts, (posts) =>
+  posts.slice().sort((a, b) => b.timestamp - a.timestamp)
 );
 
 export const { addPost } = postsSlice.actions;
