@@ -42,13 +42,14 @@ export const CreatePostsScreen = () => {
       placeName,
       location,
       timestamp: Date.now(),
+      comments: 0,
     };
-    const timestamp = Date.now();
-    const date = new Date(timestamp);
-    console.log("date", date);
+    // const timestamp = Date.now();
+    // const date = new Date(timestamp);
+    // console.log("date", date);
     dispatch(addPost({ ...res, id: uuid.v4() }));
     const state = store.getState();
-    console.log(state.posts.entities);
+    // console.log(state.posts.entities);
     GoToPosts();
   };
 

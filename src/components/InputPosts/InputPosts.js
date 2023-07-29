@@ -1,6 +1,4 @@
-import { useCallback } from "react";
-import { useState } from "react";
-import { useMemo } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 import { pixels } from "../../utilities/adptivePixels";
 import { MapPinIcon } from "../UI/icons";
@@ -16,7 +14,7 @@ const getIcon = (iconName) => {
 
 export const InputPosts = (props) => {
   const [isFocused, setIsFocused] = useState(false);
-  const icon = getIcon(props.icon);
+  const [icon, setIcon] = useState(null);
 
   const handleFocus = useCallback(() => setIsFocused(true));
   const handleBlur = useCallback(() => setIsFocused(false));
@@ -34,6 +32,10 @@ export const InputPosts = (props) => {
     onFocus: handleFocus,
     onBlur: handleBlur,
   }));
+
+  useEffect(() => {
+    setIcon(getIcon(props.icon));
+  }, [props.icon, isFocused]);
 
   return (
     <View style={[icon && { position: "relative" }]}>
@@ -61,7 +63,6 @@ const styles = StyleSheet.create({
     paddingLeft: pixels.height[28],
   },
   focused: {
-    backgroundColor: "#fff",
     borderColor: "#FF6C00",
   },
 });

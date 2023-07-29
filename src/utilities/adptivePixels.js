@@ -18,6 +18,7 @@ const getPixelsWidth = (size) => {
 export const pixels = {
   width: {
     5: getPixelsWidth(5),
+    6: getPixelsWidth(6),
     8: getPixelsWidth(8),
     10: getPixelsWidth(10),
     11: getPixelsWidth(11),
@@ -56,6 +57,7 @@ export const pixels = {
   },
   height: {
     5: getPixelsHeight(5),
+    6: getPixelsHeight(6),
     8: getPixelsHeight(8),
     10: getPixelsHeight(10),
     11: getPixelsHeight(11),

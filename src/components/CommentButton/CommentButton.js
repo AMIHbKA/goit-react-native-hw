@@ -1,10 +1,30 @@
-import { Pressable } from "react-native";
+import { useState } from "react";
+import { Text, Pressable, StyleSheet } from "react-native";
+import { pixels } from "../../utilities/adptivePixels";
 import { CommentIcon } from "../UI/icons";
 
 export const CommentButton = () => {
+  const [count, setCount] = useState(2);
+
   return (
-    <Pressable>
-      <CommentIcon />
+    <Pressable style={styles.container}>
+      <CommentIcon
+        stroke={count ? "#FF6C00" : "#BDBDBD"}
+        fill={count ? "#FF6C00" : "none"}
+      />
+      <Text style={[styles.text, count && { color: "#212121" }]}>{count}</Text>
     </Pressable>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    borderWidth: 1,
+    flexDirection: "row",
+  },
+  text: {
+    alignSelf: "center",
+    marginLeft: pixels.width[6],
+    color: "#BDBDBD",
+  },
+});

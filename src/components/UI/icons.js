@@ -393,12 +393,16 @@ export const ImageOffIcon = ({ size = 24, stroke = "#BDBDBD" }) => {
   );
 };
 
-export const CommentIcon = ({ size = 24, stroke = "#BDBDBD" }) => {
+export const CommentIcon = ({
+  size = 24,
+  fill = "none",
+  stroke = "#BDBDBD",
+}) => {
   return (
     <Svg
       width={size}
       height={size}
-      fill="none"
+      fill={fill}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       stroke={stroke}
