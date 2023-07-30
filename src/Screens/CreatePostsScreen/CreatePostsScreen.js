@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -8,15 +8,14 @@ import {
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
 } from "react-native";
-import { ButtonMain } from "../../components/ButtonMain/ButtonMain";
+import { ButtonMain, DeleteButton } from "../../components/Buttons";
 import { CameraBlock } from "../../components/CameraBlock/CameraBlock";
-import { DeleteButton } from "../../components/DeleteButton/DeleteButton";
 import { FadeInView } from "../../components/FadeInView/FadeInView";
-import { InputPosts } from "../../components/InputPosts/InputPosts";
+import { InputPosts } from "../../components/Inputs";
 import { ScrollContainer } from "../../components/ScrollContainer/ScrollContainer";
 import { textStyleGrey } from "../../components/UI/commonStyles";
 import { useKeyboardVisibility } from "../../hooks/useKeyboardVisibility";
-import { pixels } from "../../utilities/adptivePixels";
+import { pixels } from "../../utilities";
 import uuid from "react-native-uuid";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../redux/features/posts/slice";

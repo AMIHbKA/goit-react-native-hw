@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { Animated, StyleSheet } from "react-native";
-import { ExpandButton } from "../ExpandButton/ExpandButton";
+import { ExpandButton } from "../Buttons";
 
 export const ExpandLayout = ({
   height = 200,

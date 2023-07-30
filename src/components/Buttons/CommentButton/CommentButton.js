@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Text, Pressable, StyleSheet } from "react-native";
-import { pixels } from "../../utilities/adptivePixels";
-import { CommentIcon } from "../UI/icons";
+import { pixels } from "../../../utilities";
+import { CommentIcon } from "../../UI/icons";
 
 export const CommentButton = () => {
   const [count, setCount] = useState(2);

@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
-import { pixels } from "../../utilities/adptivePixels";
+import { pixels } from "../../../utilities";
 
 export const ButtonMain = (props) => {
   return (

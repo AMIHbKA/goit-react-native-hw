@@ -3,7 +3,7 @@ import { View, StyleSheet, Animated } from "react-native";
 import { FadeInView } from "../../components/FadeInView/FadeInView";
 import { PostsList } from "../../components/PostsList/PostsList";
 import { User } from "../../components/User/User";
-import { pixels } from "../../utilities/adptivePixels";
+import { pixels } from "../../utilities";
 import { debounce } from "../../utilities/debounce";
 import { throttle } from "../../utilities/throttle";
 

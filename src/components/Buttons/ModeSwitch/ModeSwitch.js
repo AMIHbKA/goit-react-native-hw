@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet } from "react-native";
-import { pixels } from "../../utilities/adptivePixels";
-import { CameraOffIcon, ImageOffIcon } from "../UI/icons";
+import { pixels } from "../../../utilities";
+import { CameraOffIcon, ImageOffIcon } from "../../UI/icons";
 
 export const ModeSwitch = ({ cameraMode, onPress }) => {
   return (

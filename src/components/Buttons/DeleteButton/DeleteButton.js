@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, View } from "react-native";
-import { TrashIcon } from "../UI/icons";
-import { pixels } from "../../utilities/adptivePixels";
+import { TrashIcon } from "../../UI/icons";
+import { pixels } from "../../../utilities";
 
 export const DeleteButton = ({ width, height, isActive, onPress }) => {
   return (

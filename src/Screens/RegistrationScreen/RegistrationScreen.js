@@ -9,17 +9,16 @@ import {
 } from "react-native";
 import { Avatar } from "../../components/Avatar/Avatar";
 import Background from "../../components/Background/Background";
-import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
-import { ButtonMain } from "../../components/ButtonMain/ButtonMain";
+import { ButtonLink, ButtonMain } from "../../components/Buttons";
 import { FormLayout } from "../../components/FormLayout/FormLayout";
-import { Input } from "../../components/Input/Input";
+import { Input } from "../../components/Inputs";
 import { ScrollContainer } from "../../components/ScrollContainer/ScrollContainer";
-import { pixels } from "../../utilities/adptivePixels";
+import { pixels } from "../../utilities";
 import {
   validateLogin,
   validateEmail,
   validatePassword,
-} from "../../utilities/validation";
+} from "../../utilities";
 
 export const RegistrationScreen = () => {
   const navigation = useNavigation();

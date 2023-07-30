@@ -1,13 +1,11 @@
 import { Camera } from "expo-camera";
 import * as MediaLibrary from "expo-media-library";
 import * as Location from "expo-location";
-import { View, StyleSheet, Text, Image, Button } from "react-native";
-import { pixels } from "../../utilities/adptivePixels";
-import { CameraButton } from "../CameraButton/CameraButton";
-import { useState, useEffect, useRef } from "react";
+import { View, StyleSheet, Text, Image } from "react-native";
+import { pixels } from "../../utilities";
+import { useState, useEffect } from "react";
 import { ExpandLayout } from "../ExpandLayout/ExpandLayout";
-import { ModeSwitch } from "../ModeSwitch/ModeSwitch";
-import store from "../../redux/store";
+import { CameraButton, ModeSwitch } from "../Buttons/index";
 
 export const CameraBlock = ({ onPhotoChange }) => {
   const [hasPermission, setHasPermission] = useState(null);

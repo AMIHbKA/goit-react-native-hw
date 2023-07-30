@@ -1,15 +1,8 @@
-import {
-  Image,
-  Pressable,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, Pressable, StyleSheet, View } from "react-native";
 import { AddPhotoIcon, DelPhotoIcon } from "../UI/icons";
 import * as ImagePicker from "expo-image-picker";
 import { useState } from "react";
-import { pixels } from "../../utilities/adptivePixels";
-import { ExitButton } from "../ExitButton/ExitButton";
+import { pixels } from "../../utilities";
 
 export const Avatar = () => {
   const [image, setImage] = useState(null);
@@ -50,7 +43,6 @@ const styles = StyleSheet.create({
   container: {
     left: "50%",
     width: pixels.width[120],
-    // position: "absolute",
     alignItems: "center",
     paddingBottom: pixels.width[35],
   },
@@ -72,6 +64,5 @@ const styles = StyleSheet.create({
 
     width: pixels.width[25],
     height: pixels.width[25],
-    // borderRadius: 20,
   },
 });

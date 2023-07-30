@@ -1,9 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Pressable, TouchableOpacity, View } from "react-native";
-import { CreatePostsScreen } from "../../Screens/CreatePostsScreen/CreatePostsScreen";
-import { LoginScreen } from "../../Screens/LoginScreen/LoginScreen";
-import { PostsScreen } from "../../Screens/PostsScreen/PostsScreen";
+import { TouchableOpacity, View } from "react-native";
 import { AddIcon, GridIcon, UserIcon } from "../UI/icons";
+import { CreatePostsScreen, PostsScreen, ProfileScreen } from "../../Screens";
 
 const Tabs = createBottomTabNavigator();
 
@@ -45,18 +43,6 @@ export const BottomNavigation = () => {
             </View>
           ),
         })}
-        // options={{
-        //   tabBarIcon: ({ focused }) => (
-        //     <View
-        //       style={{
-        //         ...iconStyles,
-        //         backgroundColor: focused ? "#FF6C00" : "transparent",
-        //       }}
-        //     >
-        //       <GridIcon stroke={focused ? "#fff" : "#4d4d4d"} fill="none" />
-        //     </View>
-        //   ),
-        // }}
       />
       <Tabs.Screen
         name="Create"
@@ -76,7 +62,7 @@ export const BottomNavigation = () => {
       />
       <Tabs.Screen
         name="Profile"
-        component={CreatePostsScreen}
+        component={ProfileScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View

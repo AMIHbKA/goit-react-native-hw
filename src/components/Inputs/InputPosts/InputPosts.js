@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useMemo } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
-import { pixels } from "../../utilities/adptivePixels";
-import { MapPinIcon } from "../UI/icons";
+import { pixels } from "../../../utilities";
+import { MapPinIcon } from "../../UI/icons";
 
 const getIcon = (iconName) => {
   switch (iconName) {

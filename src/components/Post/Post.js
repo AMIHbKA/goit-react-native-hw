@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import { pixels } from "../../utilities/adptivePixels";
-import { CommentButton } from "../CommentButton/CommentButton";
+import { pixels } from "../../utilities";
+import { CommentButton } from "../Buttons";
 
 export const Post = ({ post }) => {
   return (
@@ -9,6 +9,7 @@ export const Post = ({ post }) => {
       <Image source={{ uri: post.photo }} style={styles.image} />
       <Text>{post.photoName}</Text>
       <CommentButton />
+
       <Text>Широта: {post.location.latitude}</Text>
       <Text>Долгота: {post.location.longitude}</Text>
       <Text>Название места: {post.placeName}</Text>

@@ -1,13 +1,12 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
-import { ExitButton } from "../../components/ExitButton/ExitButton";
+import { BackButton, ExitButton } from "../../components/Buttons";
 import { headerStyle } from "../../components/UI/commonStyles";
 import { AddIcon, GridIcon, UserIcon } from "../../components/UI/icons";
-import { PostsScreen } from "../../Screens/PostsScreen/PostsScreen";
-import { pixels } from "../../utilities/adptivePixels";
+import { pixels } from "../../utilities";
+import { PostsScreen } from "../PostsScreen/PostsScreen";
 import { CreatePostsScreen } from "../CreatePostsScreen/CreatePostsScreen";
-import { BackButton } from "../../components/BackButton/BackButton";
 import { ProfileScreen } from "../ProfileScreen/ProfileScreen";
 
 const Tabs = createBottomTabNavigator();
@@ -85,7 +84,6 @@ export const Home = () => {
           ...headerStyle,
         }}
       />
-
       <Tabs.Screen
         name="Create"
         component={CreatePostsScreen}

@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
-import { pixels } from "../../utilities/adptivePixels";
+import { pixels } from "../../../utilities/adptivePixels";
 
 const ErrorMessage = ({ error, errorText }) =>
   error && (

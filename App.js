@@ -5,11 +5,9 @@ import {
 } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
-import { LoginScreen } from "./src/Screens/LoginScreen/LoginScreen";
-import { RegistrationScreen } from "./src/Screens/RegistrationScreen/RegistrationScreen";
-import { Home } from "./src/Screens/Home/Home";
 import { Provider } from "react-redux";
 import { store } from "./src/redux/store";
+import { Home, LoginScreen, RegistrationScreen } from "./src/Screens";
 
 const MainStack = createStackNavigator();
 

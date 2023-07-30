@@ -1,6 +1,6 @@
 import { Pressable } from "react-native";
-import { pixels } from "../../utilities/adptivePixels";
-import { CollapseIcon, ExpandIcon } from "../UI/icons";
+import { pixels } from "../../../utilities";
+import { CollapseIcon, ExpandIcon } from "../../UI/icons";
 
 export const ExpandButton = ({ expand, buttonColor, onPress }) => {
   return (

@@ -1,5 +1,5 @@
 import { Image, View, Text, StyleSheet } from "react-native";
-import { pixels } from "../../utilities/adptivePixels";
+import { pixels } from "../../utilities";
 import { useState } from "react";
 
 export const User = ({ style }) => {

@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet } from "react-native";
-import { pixels } from "../../utilities/adptivePixels";
-import { CameraIcon } from "../UI/icons";
+import { pixels } from "../../../utilities";
+import { CameraIcon } from "../../UI/icons";
 
 export const CameraButton = (props) => {
   return (
