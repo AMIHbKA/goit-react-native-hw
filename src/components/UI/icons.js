@@ -124,12 +124,7 @@ export const UserIcon = ({ size = 24, stroke = "#212121" }) => {
   );
 };
 
-export const GridIcon = ({
-  size = 24,
-
-  fill = "#fff",
-  stroke = "#212121",
-}) => {
+export const GridIcon = ({ size = 24, fill = "#fff", stroke = "#212121" }) => {
   return (
     <Svg
       width={size}
@@ -179,13 +174,13 @@ export const GridIcon = ({
   );
 };
 
-export const AddIcon = ({ size = 40, fill = "#212121" }) => {
+export const AddIcon = ({ size = 32, fill = "#212121" }) => {
   return (
     <Svg
       width={size}
       height={size}
       fill="none"
-      viewBox="0 0 40 40"
+      viewBox="0 0 32 32"
       xmlns="http://www.w3.org/2000/svg"
     >
       <Path

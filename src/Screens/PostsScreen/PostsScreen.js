@@ -1,11 +1,9 @@
 import { useRef } from "react";
-import { View, StyleSheet, Animated } from "react-native";
+import { StyleSheet, Animated } from "react-native";
 import { FadeInView } from "../../components/FadeInView/FadeInView";
 import { PostsList } from "../../components/PostsList/PostsList";
 import { User } from "../../components/User/User";
-import { pixels } from "../../utilities";
-import { debounce } from "../../utilities/debounce";
-import { throttle } from "../../utilities/throttle";
+import { pixels, debounce } from "../../utilities";
 
 const HEIGHT = pixels.width[60];
 
@@ -50,6 +48,7 @@ export const PostsScreen = () => {
       <Animated.View
         style={{
           marginTop: marginTopAnim,
+          marginBottom: marginTopAnim,
           height: userHeight,
           opacity: scrollY.interpolate({
             inputRange: [0, HEIGHT],

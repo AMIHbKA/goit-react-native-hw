@@ -1,4 +1,4 @@
-import { CommentScreen } from "./CommentsScreen/CommentsScreen";
+import { CommentsScreen } from "./CommentsScreen/CommentsScreen";
 import { CreatePostsScreen } from "./CreatePostsScreen/CreatePostsScreen";
 import { Home } from "./Home/Home";
 import { LoginScreen } from "./LoginScreen/LoginScreen";
@@ -8,7 +8,7 @@ import { ProfileScreen } from "./ProfileScreen/ProfileScreen";
 import { RegistrationScreen } from "./RegistrationScreen/RegistrationScreen";
 
 export {
-  CommentScreen,
+  CommentsScreen,
   CreatePostsScreen,
   Home,
   LoginScreen,
