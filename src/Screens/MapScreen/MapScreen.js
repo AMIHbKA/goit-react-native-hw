@@ -16,8 +16,8 @@ export const MapScreen = ({ route }) => {
         }}
         mapType="standard"
         minZoomLevel={13}
-        onMapReady={() => console.log("Map is ready")}
-        onRegionChange={() => console.log("Region change")}
+        // onMapReady={() => console.log("Map is ready")}
+        // onRegionChange={() => console.log("Region change")}
       >
         <Marker
           title={placeName}
