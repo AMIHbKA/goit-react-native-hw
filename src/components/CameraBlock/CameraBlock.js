@@ -24,7 +24,7 @@ export const CameraBlock = ({ onPhotoChange }) => {
 
       if (onPhotoChange) {
         let location = await Location.getCurrentPositionAsync({});
-        console.log("location", location);
+        // console.log("location", location);
         const coords = {
           latitude: location.coords.latitude,
           longitude: location.coords.longitude,
@@ -55,7 +55,7 @@ export const CameraBlock = ({ onPhotoChange }) => {
   }, []);
 
   if (hasPermission === null) {
-    return <View />;
+    return <Text>No access to camera</Text>;
   }
 
   if (hasPermission === false) {
