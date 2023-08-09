@@ -5,6 +5,7 @@ import { CommentButton, LocationButton } from "../Buttons";
 import { ExpandLayout } from "../ExpandLayout/ExpandLayout";
 
 export const Post = ({ post }) => {
+  console.log("post", post);
   return (
     <View style={styles.container}>
       <ExpandLayout height={pixels.height[240]}>
@@ -14,7 +15,11 @@ export const Post = ({ post }) => {
       <Text style={styles.title}>{post.photoName}</Text>
       <View style={styles.infoContainer}>
         <CommentButton />
-        <LocationButton text={post.placeName} />
+        <LocationButton
+          text={post.placeName}
+          latitude={post.location.latitude}
+          longitude={post.location.longitude}
+        />
       </View>
     </View>
   );

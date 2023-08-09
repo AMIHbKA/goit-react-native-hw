@@ -48,7 +48,7 @@ export const CreatePostsScreen = () => {
     // console.log("date", date);
     dispatch(addPost({ ...res, id: uuid.v4() }));
     const state = store.getState();
-    // console.log(state.posts.entities);
+    console.log(state.posts.entities);
     GoToPosts();
   };
 

@@ -12,6 +12,7 @@ import {
   LoginScreen,
   RegistrationScreen,
   CommentsScreen,
+  MapScreen,
 } from "./src/Screens";
 import { BackButton } from "./src/components/Buttons";
 import { headerStyle } from "./src/components/UI/commonStyles";
@@ -51,6 +52,15 @@ export default function App() {
               title: "Публікації",
               headerLeft: (props) => <BackButton />,
               ...headerStyle,
+            }}
+          />
+          <MainStack.Screen
+            name="Map"
+            component={MapScreen}
+            options={{
+              headerShown: false,
+              headerLeft: (props) => <BackButton />,
+              // ...headerStyle,
             }}
           />
         </MainStack.Navigator>

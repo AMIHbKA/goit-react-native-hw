@@ -92,7 +92,7 @@ export const Home = () => {
           tabBarStyle: { display: "none" },
           headerLeft: (props) => <BackButton />,
           ...headerStyle,
-          tabBarVisible: false,
+          // tabBarVisible: false,
         }}
       />
 

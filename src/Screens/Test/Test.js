@@ -1,48 +1,44 @@
-import { useState } from "react";
-import { NativeModules, LayoutAnimation, StyleSheet, View } from "react-native";
-import { ExpandButton } from "../../components/ExpandButton/ExpandButton";
+// import React from "react";
+// import { View, StyleSheet, Dimensions } from "react-native";
+// import MapView, { Marker } from "react-native-maps";
 
-const { UIManager } = NativeModules;
+// const Test = () => {
+//   return (
+//     <View style={styles.container}>
+//       <MapView
+//         style={styles.mapStyle}
+//         region={{
+//           latitude: 37.78825,
+//           longitude: -122.4324,
+//           latitudeDelta: 0.0922,
+//           longitudeDelta: 0.0421,
+//         }}
+//         mapType="standard"
+//         minZoomLevel={15}
+//         onMapReady={() => console.log("Map is ready")}
+//         onRegionChange={() => console.log("Region change")}
+//       >
+//         <Marker
+//           title="I am here"
+//           coordinate={{ latitude: 37.78825, longitude: -122.4324 }}
+//           description="Hello"
+//         />
+//       </MapView>
+//     </View>
+//   );
+// };
 
-UIManager.setLayoutAnimationEnabledExperimental &&
-  UIManager.setLayoutAnimationEnabledExperimental(true);
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: "#fff",
+//     alignItems: "center",
+//     justifyContent: "center",
+//   },
+//   mapStyle: {
+//     width: Dimensions.get("window").width,
+//     height: Dimensions.get("window").height,
+//   },
+// });
 
-export const test = ({
-  height = 200,
-  expandHeight = 500,
-  children,
-  buttonColor,
-}) => {
-  const [heightDimention, setHeightDimention] = useState(height);
-  const [expand, setExpand] = useState(false);
-  const dimentionsHandler = () => {
-    setExpand(!expand);
-    // Animate the update
-    LayoutAnimation.spring();
-    setHeightDimention(expand ? height : expandHeight);
-  };
-
-  return (
-    <View style={[styles.box, { width: "100%", height: heightDimention }]}>
-      {children}
-      <ExpandButton
-        onPress={dimentionsHandler}
-        style={styles.button}
-        buttonColor={buttonColor}
-        expand={expand}
-      />
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  box: {
-    width: "100%",
-  },
-  button: {
-    position: "absolute",
-    bottom: 10,
-    right: 10,
-    alignSelf: "flex-end",
-  },
-});
+// export default Test;
