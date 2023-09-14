@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { pixels } from "../../utilities/adptivePixels";
+import { pixels } from "../../../utilities/adptivePixels";
 
 export const ButtonLink = ({ text, link, style, onPress }) => {
   return (

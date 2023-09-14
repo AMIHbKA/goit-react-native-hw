@@ -1,4 +1,4 @@
-import { pixels } from "../../utilities/adptivePixels";
+import { pixels } from "../../utilities";
 
 export const headerStyle = {
   headerStyle: {

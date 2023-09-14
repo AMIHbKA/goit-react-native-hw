@@ -1,10 +1,10 @@
 import { Pressable, StyleSheet } from "react-native";
-import { pixels } from "../../utilities/adptivePixels";
-import { CameraIcon } from "../UI/icons";
+import { pixels } from "../../../utilities";
+import { CameraIcon } from "../../UI/icons";
 
-export const CameraButton = () => {
+export const CameraButton = (props) => {
   return (
-    <Pressable style={styles.container}>
+    <Pressable {...props} style={styles.container}>
       <CameraIcon size={pixels.height[24]} />
     </Pressable>
   );
@@ -14,9 +14,12 @@ const styles = StyleSheet.create({
   container: {
     width: pixels.height[60],
     height: pixels.height[60],
-    backgroundColor: "#fff",
+    // backgroundColor: "#fff",
+    borderWidth: 1,
+    borderColor: "#fff",
     borderRadius: 50,
     justifyContent: "center",
     alignItems: "center",
+    // opacity: 0.5,
   },
 });

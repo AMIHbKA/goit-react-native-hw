@@ -7,8 +7,3 @@ export const Header = ({ text }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: { width: 49, borderWidth: 1 },
-  header: {},
-});

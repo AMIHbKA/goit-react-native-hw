@@ -1,11 +1,11 @@
 import { Image, View, Text, StyleSheet } from "react-native";
-import { pixels } from "../../utilities/adptivePixels";
+import { pixels } from "../../utilities";
 import { useState } from "react";
 
-export const User = () => {
+export const User = ({ style }) => {
   const [image, setImage] = useState(null);
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <Image style={styles.photo} source={{ uri: image }} />
       <View style={styles.textContainer}>
         <Text style={styles.userText}>UserName</Text>
@@ -17,8 +17,8 @@ export const User = () => {
 
 const styles = StyleSheet.create({
   container: {
+    height: "auto",
     flexDirection: "row",
-    marginTop: pixels.height[32],
   },
   photo: {
     height: pixels.width[60],

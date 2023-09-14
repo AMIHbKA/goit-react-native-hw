@@ -1,16 +1,12 @@
 import { Text } from "react-native";
-import { TouchableWithoutFeedback, TouchableOpacity } from "react-native";
-import { KeyboardAvoidingView } from "react-native";
 import { Dimensions, StyleSheet, View } from "react-native";
 import { Avatar } from "../../components/Avatar/Avatar";
 import Background from "../../components/Background/Background";
-import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
-import { ExitButton } from "../../components/ExitButton/ExitButton";
+import { ExitButton } from "../../components/Buttons";
 import { FadeInView } from "../../components/FadeInView/FadeInView";
 import { FormLayout } from "../../components/FormLayout/FormLayout";
 import { ScrollContainer } from "../../components/ScrollContainer/ScrollContainer";
-import { ExitIcon } from "../../components/UI/icons";
-import { pixels } from "../../utilities/adptivePixels";
+import { pixels } from "../../utilities";
 
 export const ProfileScreen = () => {
   return (

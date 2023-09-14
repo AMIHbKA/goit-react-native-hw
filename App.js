@@ -5,40 +5,66 @@ import {
 } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
-import { LoginScreen } from "./src/Screens/LoginScreen/LoginScreen";
-import { RegistrationScreen } from "./src/Screens/RegistrationScreen/RegistrationScreen";
-import { Home } from "./src/Screens/Home/Home";
+import { Provider } from "react-redux";
+import { store } from "./src/redux/store";
+import {
+  Home,
+  LoginScreen,
+  RegistrationScreen,
+  CommentsScreen,
+  MapScreen,
+} from "./src/Screens";
+import { BackButton } from "./src/components/Buttons";
+import { headerStyle } from "./src/components/UI/commonStyles";
 
 const MainStack = createStackNavigator();
 
-// Кнопка удаления при появлении клавиатуры расположена некорректно
-
 export default function App() {
   return (
-    <NavigationContainer>
-      <StatusBar />
-      <MainStack.Navigator
-        initialRouteName="Login"
-        screenOptions={{ ...TransitionPresets.FadeFromCenter }}
-      >
-        <MainStack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{ headerShown: false }}
-        />
-        <MainStack.Screen
-          name="Registration"
-          component={RegistrationScreen}
-          options={{ headerShown: false }}
-        />
-        <MainStack.Screen
-          name="Home"
-          component={Home}
-          options={{
-            headerShown: false,
-          }}
-        />
-      </MainStack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <StatusBar />
+        <MainStack.Navigator
+          initialRouteName="Login"
+          screenOptions={{ ...TransitionPresets.FadeFromCenter }}
+        >
+          <MainStack.Screen
+            name="Login"
+            component={LoginScreen}
+            options={{ headerShown: false }}
+          />
+          <MainStack.Screen
+            name="Registration"
+            component={RegistrationScreen}
+            options={{ headerShown: false }}
+          />
+          <MainStack.Screen
+            name="Home"
+            component={Home}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <MainStack.Screen
+            name="Comments"
+            component={CommentsScreen}
+            options={{
+              title: "Публікації",
+              headerLeft: (props) => <BackButton />,
+              ...headerStyle,
+            }}
+          />
+          <MainStack.Screen
+            name="Map"
+            component={MapScreen}
+            options={{
+              headerShown: false,
+              headerLeft: (props) => <BackButton />,
+              // ...headerStyle,
+            }}
+          />
+        </MainStack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }

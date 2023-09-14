@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
-import { pixels } from "../../utilities/adptivePixels";
-import { ExitIcon } from "../UI/icons";
+import { pixels } from "../../../utilities/adptivePixels";
+import { ExitIcon } from "../../UI/icons";
 
 export const ExitButton = ({ size, onPress, style }) => {
   const navigation = useNavigation();

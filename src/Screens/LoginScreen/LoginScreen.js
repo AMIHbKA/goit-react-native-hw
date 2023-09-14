@@ -9,13 +9,11 @@ import {
   View,
 } from "react-native";
 import Background from "../../components/Background/Background";
-import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
-import { ButtonMain } from "../../components/ButtonMain/ButtonMain";
 import { FormLayout } from "../../components/FormLayout/FormLayout";
-import { Input } from "../../components/Input/Input";
 import { ScrollContainer } from "../../components/ScrollContainer/ScrollContainer";
-import { pixels } from "../../utilities/adptivePixels";
-import { validateEmail, validatePassword } from "../../utilities/validation";
+import { validateEmail, validatePassword, pixels } from "../../utilities";
+import { Input } from "../../components/Inputs";
+import { ButtonLink, ButtonMain } from "../../components/Buttons";
 
 export const LoginScreen = () => {
   const navigation = useNavigation();
